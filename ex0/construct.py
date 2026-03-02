@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/26 10:12:41 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/26 11:55:47 by fcaval          ###   ########.fr        #
+#  Updated: 2026/03/02 11:15:38 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -14,12 +14,13 @@ import sys
 import os
 import site
 
+
 def main():
     try:
         if sys.prefix == sys.base_prefix:
             print("\nMATRIX STATUS: You're still plugged in\n")
             print(f"Current Python: {sys.executable}")
-            print(f"Virtual Environnement: None detected")
+            print("Virtual Environnement: None detected")
             print()
 
             print("WARNING: You're in the global environment!")
@@ -46,12 +47,12 @@ def main():
             print("Safe to install packages without affecting "
                   "the global system.")
             print()
-            
+
             print(f"Package installation path: {site.USER_SITE}")
 
     except Exception as e:
         print(f"Error: {e}")
-    
+
 
 if __name__ == "__main__":
     main()
