@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/02 10:34:46 by fcaval          #+#    #+#               #
-#  Updated: 2026/03/02 11:16:03 by fcaval          ###   ########.fr        #
+#  Updated: 2026/03/02 15:59:46 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -17,17 +17,24 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def main():
+def main() -> None:
 
     print("\nORACLE STATUS: Reading the Matrix...\n")
 
     finish = False
-    if not os.path.exists(".env"):
+    if not os.path.exists(".env") and not os.path.exits(".env.example"):
         print("Error: .env file not found. Please create a .env "
               "file with the necessary configuration.")
-        return
+        sys.exit()
     print("Configuration loaded:")
-    print(f"Mode: {os.getenv('MATRIX_MODE')}")
+    if os.getenv("MATRIX_MODE"):
+        if os.getenv("MATRIX_MODE") == "development":
+            print("Mode: development")
+        elif os.getenv("MATRIX_MODE") == "production":
+            print("Mode: production")
+    else:
+        print("ERROR: choice your mode: development or production")
+        sys.exit()
     if os.getenv("DATABASE_URL"):
         print("Database: Connected to local instance")
     else:
@@ -45,7 +52,7 @@ def main():
         print("Zion Network: Not available")
         finish = True
     if finish:
-        print("\nSomething lost in your your .env. - Check "
+        print("\nSomething lost in your .env. - Check "
               ".env.example for the requirements.")
         sys.exit()
     print()

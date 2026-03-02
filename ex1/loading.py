@@ -6,12 +6,12 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/26 13:11:06 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/27 17:01:57 by fcaval          ###   ########.fr        #
+#  Updated: 2026/03/02 15:59:31 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 
-def main():
+def main() -> None:
     try:
         print("\n" + "LOADING STATUS: Loading programs..." + "\n")
 

@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/26 10:12:41 by fcaval          #+#    #+#               #
-#  Updated: 2026/03/02 11:15:38 by fcaval          ###   ########.fr        #
+#  Updated: 2026/03/02 15:59:26 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -15,7 +15,7 @@ import os
 import site
 
 
-def main():
+def main() -> None:
     try:
         if sys.prefix == sys.base_prefix:
             print("\nMATRIX STATUS: You're still plugged in\n")
@@ -28,7 +28,7 @@ def main():
             print()
 
             print("To enter the construct, run:")
-            print("python -m venv matrix_env")
+            print("python3 -m venv matrix_env")
             print("source matrix_env/bin/activate # On Unix")
             print("matrix_env")
             print("Scripts activate # On Windows")
